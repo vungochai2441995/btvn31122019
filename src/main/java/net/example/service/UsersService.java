@@ -18,7 +18,12 @@ public class UsersService implements IUsersService {
         return users;
     }
 
-    public int createUser(CreateUsersRequest createUsersRequest){
+    public Users test(){
+        Users users = usersDAO.test();
+        return users;
+    }
+
+    public Integer createUser(CreateUsersRequest createUsersRequest){
         Users users = usersDAO.findByUsername(createUsersRequest.getUsername());
         if (users != null){
             return 0;
@@ -39,7 +44,7 @@ public class UsersService implements IUsersService {
         return usersDAO.findByEmail(e);
     }
 
-    public int deleteUserByUsername(String u){
+    public Integer deleteUserByUsername(String u){
         Users users = usersDAO.findByUsername(u);
         System.out.println(users);
         if(users != null){
@@ -50,7 +55,7 @@ public class UsersService implements IUsersService {
         }
     }
 
-    public int updateUser(CreateUsersRequest createUsersRequest){
+    public Integer updateUser(CreateUsersRequest createUsersRequest){
         Users users = usersDAO.findByUsername(createUsersRequest.getUsername());
         if (users == null){
             return 0;
