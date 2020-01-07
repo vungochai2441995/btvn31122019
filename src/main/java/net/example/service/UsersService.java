@@ -1,5 +1,6 @@
 package net.example.service;
 
+import io.swagger.models.auth.In;
 import net.example.dao.UsersDAO;
 import net.example.entity.Users;
 import net.example.model.request.CreateUsersRequest;
@@ -15,10 +16,10 @@ public class UsersService implements IUsersService {
 
     public List<Users> getAllUsers() {
         List<Users> users = usersDAO.findAll();
-        return users;
+        return null;
     }
 
-    public int createUser(CreateUsersRequest createUsersRequest){
+    public Integer createUser(CreateUsersRequest createUsersRequest){
         Users users = usersDAO.findByUsername(createUsersRequest.getUsername());
         if (users != null){
             return 0;
@@ -39,18 +40,18 @@ public class UsersService implements IUsersService {
         return usersDAO.findByEmail(e);
     }
 
-    public int deleteUserByUsername(String u){
+    public Integer deleteUserByUsername(String u){
         Users users = usersDAO.findByUsername(u);
         System.out.println(users);
         if(users != null){
             usersDAO.deleteById(users.getId());
-            return 1;
+            return  1;
         }else {
             return 0;
         }
     }
 
-    public int updateUser(CreateUsersRequest createUsersRequest){
+    public Integer updateUser(CreateUsersRequest createUsersRequest){
         Users users = usersDAO.findByUsername(createUsersRequest.getUsername());
         if (users == null){
             return 0;
