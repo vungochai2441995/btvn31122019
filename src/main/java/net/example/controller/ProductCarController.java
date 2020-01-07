@@ -16,8 +16,8 @@ public class ProductCarController {
     @Autowired
     private ICarProductService carProductService;
 //
-//    @GetMapping(name = "")
-//    public List<String> findAllLocation(){
-//        return carProductService.searchLocation();
-//    }
+    @GetMapping(name = "")
+    public List<String> findAllLocation(){
+        return carProductService.searchLocation();
+    }
 }

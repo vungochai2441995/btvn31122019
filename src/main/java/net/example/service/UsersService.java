@@ -5,11 +5,12 @@ import net.example.dao.UsersDAO;
 import net.example.entity.Users;
 import net.example.model.request.CreateUsersRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Component
 public class UsersService implements IUsersService {
     @Autowired
     private UsersDAO usersDAO;

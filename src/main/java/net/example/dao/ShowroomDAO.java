@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface ShowroomDAO extends JpaRepository<Showroom,Long> {
-        @Query("SELECT u.location FROM showroom u")
-        public List<String> findDistinct();
+        @Query(nativeQuery = true, value = "SELECT DISTINCT show_room.location FROM show_room ")
+        List<String> findDistinctLocation();
 }

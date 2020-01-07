@@ -28,4 +28,5 @@ public class Users {
 
     @OneToMany(mappedBy = "users")
     private List<Ticket> tickets = new ArrayList<>();
+
 }

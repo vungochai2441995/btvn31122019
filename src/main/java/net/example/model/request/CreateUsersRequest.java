@@ -20,6 +20,7 @@ public class CreateUsersRequest {
 
     @NotNull(message = "Username is required")
     @NotEmpty(message = "Username is required")
+
     private String username;
 
 
