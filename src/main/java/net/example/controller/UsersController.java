@@ -34,10 +34,10 @@ public class UsersController {
         return ResponseEntity.ok(usersList);
     }
 
-    @PostMapping("/test")
-    public ResponseEntity<?> testUsers(@RequestBody SearchCarRequest searchCarRequest){
-
-        return ResponseEntity.ok(searchCarRequest);
+    @GetMapping("/a")
+    public ResponseEntity<?> tx(){
+        Users usersList = usersService.test();
+        return ResponseEntity.ok(usersList);
     }
 
     @ApiOperation(value="Create an user", response = Users.class)

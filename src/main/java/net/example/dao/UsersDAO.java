@@ -12,5 +12,6 @@ public interface UsersDAO extends JpaRepository<Users,Long> {
     Users findByUsername(String username);
     Users findByEmail(String email);
 
-
+    @Query("SELECT u.address FROM Users u WHERE u.id = 18")
+    Users test();
 }

@@ -19,6 +19,11 @@ public class UsersService implements IUsersService {
         return null;
     }
 
+    public Users test(){
+        Users users = usersDAO.test();
+        return users;
+    }
+
     public Integer createUser(CreateUsersRequest createUsersRequest){
         Users users = usersDAO.findByUsername(createUsersRequest.getUsername());
         if (users != null){
